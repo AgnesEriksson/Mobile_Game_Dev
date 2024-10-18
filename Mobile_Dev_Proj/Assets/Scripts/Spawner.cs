@@ -20,10 +20,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentBall != null && !isDropped)
+/*        if (currentBall != null && !isDropped)
         {
             HandleTouch();
-        }
+        }*/
 
         if (currentBall == null && !isDropped)
         {
@@ -42,10 +42,10 @@ public class Spawner : MonoBehaviour
             rb.gravityScale = 0f;
         }
 
-        isDropped = false;
+        /*isDropped = false;*/
     }
 
-    void HandleTouch(){
+/*    void HandleTouch(){
         if (Input.touchCount > 0)
         {
             Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -70,6 +70,6 @@ public class Spawner : MonoBehaviour
         }
 
         isDropped = true;
-    }
+    }*/
 
 }
