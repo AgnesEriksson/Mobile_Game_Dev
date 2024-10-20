@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: -7586451897205654251}
   m_Layer: 0
   m_Name: pre_green_ball
-  m_TagString: Untagged
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
