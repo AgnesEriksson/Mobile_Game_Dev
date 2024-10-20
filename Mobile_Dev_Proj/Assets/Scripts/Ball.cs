@@ -22,6 +22,14 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         ballSpawner = FindObjectOfType<Spawner>();
+        if (transform.position.y < 0 )
+        {
+            isDropped = true;
+            if (rb != null)
+            {
+                rb.gravityScale = 1f;
+            }
+        }
     }
 
     // Update is called once per frame

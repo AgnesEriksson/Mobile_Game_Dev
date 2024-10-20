@@ -7,7 +7,6 @@ public class Spawner : MonoBehaviour
     public GameObject[] BallPrefabs;
     public GameObject[] MatchedBallPrefabs;
     public Transform spawnPoint;
-    public float delay = 1f;
     public GameObject currentBall;
     private float minX = -4f;  // temp bounds will be replaced with proper screen space logic
     private float maxX = 4f;
@@ -45,17 +44,19 @@ public class Spawner : MonoBehaviour
     }
     public void SpawnBall()
     {
+
         /*if (currentBall != null) return;*/
-        if (currentBall == null) { 
+        if (currentBall == null) {
 
-        int randomSprite = Random.Range(0, BallPrefabs.Length);
-        currentBall = Instantiate(BallPrefabs[randomSprite], spawnPoint.position, Quaternion.identity);
+            /*        int randomSprite = Random.Range(0, BallPrefabs.Length);
+                    currentBall = Instantiate(BallPrefabs[randomSprite], spawnPoint.position, Quaternion.identity);
 
-        Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.gravityScale = 0f;
-        }
+                    Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.gravityScale = 0f;
+                    }*/
+            StartCoroutine(nameof(delay));
     }
 
     }
@@ -76,6 +77,19 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    private IEnumerator delay()
+    {
+        yield return new WaitForSeconds(2f);
+        int randomSprite = Random.Range(0, BallPrefabs.Length);
+        currentBall = Instantiate(BallPrefabs[randomSprite], spawnPoint.position, Quaternion.identity);
+
+        Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.gravityScale = 0f;
+        }
+
+    }
     public void OnDragFinish(Vector2 pos)
     {
         matchPos = pos;
