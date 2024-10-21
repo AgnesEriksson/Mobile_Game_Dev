@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
 
 
     private Vector2 touchPos;
-    public Vector2 midpoint;
+    public Vector3 midpoint;
 
 
     // Start is called before the first frame update
@@ -37,7 +37,7 @@ public class Ball : MonoBehaviour
     {
         if (!isDropped && ballSpawner != null)
         {
-            transform.position = new Vector2(ballSpawner.transform.position.x, ballSpawner.transform.position.y);
+            transform.position = new Vector3(ballSpawner.transform.position.x, ballSpawner.transform.position.y, -1);
         }
     }
 
@@ -67,6 +67,8 @@ public class Ball : MonoBehaviour
         if(collision.gameObject.tag == gameObject.tag)
         {
             midpoint = (transform.position + collision.transform.position) / 2;
+            ScoreManager.score += 1;
+            Debug.Log(ScoreManager.score);
             Debug.Log(midpoint);
             Spawner.newBallSpawnPos = midpoint;
             Spawner.newBall = "y";

@@ -10,8 +10,8 @@ public class Spawner : MonoBehaviour
     public GameObject currentBall;
     private float minX = -4f;  // temp bounds will be replaced with proper screen space logic
     private float maxX = 4f;
-    private Vector2 matchPos = new Vector2();
-    static public Vector2 newBallSpawnPos;
+    private Vector3 matchPos = new Vector3();
+    static public Vector3 newBallSpawnPos;
     static public string newBall = "n";
     static public int whatBall = 0;
 
@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         ReplaceBall();
-        spawnPoint.position = new Vector2(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y);
+        spawnPoint.position = new Vector3(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y, -1);
 /*        newBallSpawnPos = Ball.midpoint()*/
  /*       if (currentBall == null)
         {
@@ -64,7 +64,7 @@ public class Spawner : MonoBehaviour
     public void MoveSpawnPoint(Vector2 touchPosition)
     {
         Vector3 worldTouchPos = Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 0));
-        spawnPoint.position = new Vector2(Mathf.Clamp(worldTouchPos.x, minX, maxX), spawnPoint.position.y);
+        spawnPoint.position = new Vector3(Mathf.Clamp(worldTouchPos.x, minX, maxX), spawnPoint.position.y, -1);
     }
 
     void ReplaceBall()
