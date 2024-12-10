@@ -71,7 +71,7 @@ public class Ball : MonoBehaviour
             Debug.Log(ScoreManager.score);
             Debug.Log(midpoint);
             Spawner.newBallSpawnPos = midpoint;
-            Spawner.newBall = "y";
+            Spawner.newBall = true;
             Spawner.whatBall = int.Parse(gameObject.tag);
             Destroy(gameObject);
         }

@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     private float maxX = 4f;
     private Vector3 matchPos = new Vector3();
     static public Vector3 newBallSpawnPos;
-    static public string newBall = "n";
+    static public bool newBall = false;
     static public int whatBall = 0;
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         ReplaceBall();
-        spawnPoint.position = new Vector3(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y, -1);
+        spawnPoint.position = new Vector3(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y, 1);
 /*        newBallSpawnPos = Ball.midpoint()*/
  /*       if (currentBall == null)
         {
@@ -69,9 +69,9 @@ public class Spawner : MonoBehaviour
 
     void ReplaceBall()
     {
-        if (newBall == "y")
+        if (newBall)
         {
-            newBall = "n";
+            newBall = false;
             Debug.Log(newBallSpawnPos);
             Instantiate(MatchedBallPrefabs[(whatBall+1)%MatchedBallPrefabs.Length], newBallSpawnPos, Quaternion.identity);
         }
