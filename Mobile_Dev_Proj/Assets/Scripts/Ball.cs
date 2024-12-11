@@ -7,7 +7,6 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isDropped = false;
-    private bool hasCollided = false; 
     private Spawner ballSpawner;
     public string id = "0";
 
@@ -67,13 +66,14 @@ public class Ball : MonoBehaviour
         if(collision.gameObject.tag == gameObject.tag)
         {
             midpoint = (transform.position + collision.transform.position) / 2;
-            ScoreManager.score += 1;
+            Destroy(gameObject);
+            ScoreManager.score += int.Parse(gameObject.tag);
             Debug.Log(ScoreManager.score);
             Debug.Log(midpoint);
             Spawner.newBallSpawnPos = midpoint;
             Spawner.newBall = true;
             Spawner.whatBall = int.Parse(gameObject.tag);
-            Destroy(gameObject);
+            
         }
     }
 }

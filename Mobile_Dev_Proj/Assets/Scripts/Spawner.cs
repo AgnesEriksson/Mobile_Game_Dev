@@ -14,6 +14,8 @@ public class Spawner : MonoBehaviour
     static public Vector3 newBallSpawnPos;
     static public bool newBall = false;
     static public int whatBall = 0;
+    public Drag drag;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +27,17 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         ReplaceBall();
-        spawnPoint.position = new Vector3(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y, 1);
-/*        newBallSpawnPos = Ball.midpoint()*/
- /*       if (currentBall == null)
-        {
-            SpawnBall();
-        }*/
+ /*       spawnPoint.position = new Vector3(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y, -1);*/
 
+        if (drag.drop)
+        {
+            drag.drop = false;
+            DropCurrent();
+        }
+    }
+    public void Drop()
+    {
+        DropCurrent();
     }
     public void DropCurrent()
     {
@@ -44,28 +50,17 @@ public class Spawner : MonoBehaviour
     }
     public void SpawnBall()
     {
-
-        /*if (currentBall != null) return;*/
         if (currentBall == null) {
-
-            /*        int randomSprite = Random.Range(0, BallPrefabs.Length);
-                    currentBall = Instantiate(BallPrefabs[randomSprite], spawnPoint.position, Quaternion.identity);
-
-                    Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
-                    if (rb != null)
-                    {
-                        rb.gravityScale = 0f;
-                    }*/
             StartCoroutine(nameof(delay));
-    }
+        }
 
     }
 
-    public void MoveSpawnPoint(Vector2 touchPosition)
+/*    public void MoveSpawnPoint(Vector2 touchPosition)
     {
         Vector3 worldTouchPos = Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 0));
         spawnPoint.position = new Vector3(Mathf.Clamp(worldTouchPos.x, minX, maxX), spawnPoint.position.y, -1);
-    }
+    }*/
 
     void ReplaceBall()
     {
@@ -81,7 +76,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         int randomSprite = Random.Range(0, BallPrefabs.Length);
-        currentBall = Instantiate(BallPrefabs[randomSprite], spawnPoint.position, Quaternion.identity);
+        currentBall = Instantiate(BallPrefabs[randomSprite], new Vector3(spawnPoint.position.x, spawnPoint.position.y,-1), Quaternion.identity);
 
         Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -90,9 +85,9 @@ public class Spawner : MonoBehaviour
         }
 
     }
-    public void OnDragFinish(Vector2 pos)
+/*    public void OnDragFinish(Vector2 pos)
     {
         matchPos = pos;
         Debug.Log("pos");
-    }
+    }*/
 }
