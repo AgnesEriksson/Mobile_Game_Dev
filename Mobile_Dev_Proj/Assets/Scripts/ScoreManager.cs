@@ -20,4 +20,21 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = score.ToString();
     }
+
+    public void CheckHighScore()
+    {
+        int highScore = PlayerPrefs.GetInt("HighScore", 0);
+
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            PlayerPrefs.Save();
+            Debug.Log("New high score: " + score);
+        }
+    }
+
+    public int GetHighScore()
+    {
+        return PlayerPrefs.GetInt("HighScore", 0);
+    }
 }

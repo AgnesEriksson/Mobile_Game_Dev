@@ -6,7 +6,8 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] BallPrefabs;
     public GameObject[] MatchedBallPrefabs;
-    public Transform spawnPoint;
+    public Transform Chicken;
+    public Transform SpawnPoint;
     public GameObject currentBall;
     private float minX = -4f;  // temp bounds will be replaced with proper screen space logic
     private float maxX = 4f;
@@ -27,7 +28,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         ReplaceBall();
- /*       spawnPoint.position = new Vector3(Mathf.Clamp(matchPos.x, minX, maxX), spawnPoint.position.y, -1);*/
+        transform.position = new Vector3(Chicken.position.x, Chicken.position.y, -1);
 
         if (drag.drop)
         {
@@ -56,12 +57,6 @@ public class Spawner : MonoBehaviour
 
     }
 
-/*    public void MoveSpawnPoint(Vector2 touchPosition)
-    {
-        Vector3 worldTouchPos = Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 0));
-        spawnPoint.position = new Vector3(Mathf.Clamp(worldTouchPos.x, minX, maxX), spawnPoint.position.y, -1);
-    }*/
-
     void ReplaceBall()
     {
         if (newBall)
@@ -76,7 +71,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         int randomSprite = Random.Range(0, BallPrefabs.Length);
-        currentBall = Instantiate(BallPrefabs[randomSprite], new Vector3(spawnPoint.position.x, spawnPoint.position.y,-1), Quaternion.identity);
+        currentBall = Instantiate(BallPrefabs[randomSprite], new Vector3(SpawnPoint.position.x, SpawnPoint.position.y,-1), Quaternion.identity);
 
         Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -85,9 +80,4 @@ public class Spawner : MonoBehaviour
         }
 
     }
-/*    public void OnDragFinish(Vector2 pos)
-    {
-        matchPos = pos;
-        Debug.Log("pos");
-    }*/
 }

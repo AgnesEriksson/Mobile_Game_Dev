@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     private bool isDropped = false;
     private Spawner ballSpawner;
-    private Transform chicken;
+    public Transform spawnPoint;
     public string id = "0";
 
 
@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         ballSpawner = FindObjectOfType<Spawner>();
-        chicken = ballSpawner.GetComponentInChildren<Transform>();
+        //spawnPoint = GetComponent<GameObject>();
         if (transform.position.y < 0 )
         {
             isDropped = true;
@@ -38,7 +38,7 @@ public class Ball : MonoBehaviour
     {
         if (!isDropped && ballSpawner != null)
         {
-            transform.position = new Vector3(chicken.position.x, ballSpawner.transform.position.y, -1);
+            transform.position = new Vector3(ballSpawner.transform.position.x, ballSpawner.transform.position.y, -1);
         }
     }
 
