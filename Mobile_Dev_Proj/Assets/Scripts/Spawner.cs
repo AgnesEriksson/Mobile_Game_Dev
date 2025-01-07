@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         ReplaceBall();
-        transform.position = new Vector3(Chicken.position.x, Chicken.position.y, -1);
+        //transform.position = new Vector3(Chicken.position.x, Chicken.position.y, -1);
 
         if (drag.drop)
         {
@@ -71,7 +71,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         int randomSprite = Random.Range(0, BallPrefabs.Length);
-        currentBall = Instantiate(BallPrefabs[randomSprite], new Vector3(SpawnPoint.position.x, SpawnPoint.position.y,-1), Quaternion.identity);
+        currentBall = Instantiate(BallPrefabs[randomSprite], new Vector3(SpawnPoint.position.x, SpawnPoint.position.y-1,-1), Quaternion.identity);
 
         Rigidbody2D rb = currentBall.GetComponent<Rigidbody2D>();
         if (rb != null)

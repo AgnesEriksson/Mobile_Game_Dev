@@ -31,7 +31,7 @@ public class Drag : MonoBehaviour
 
                 if (Spawn.currentBall != null)
                 {
-                    drop = true;
+                    Spawn.DropCurrent();
                 }
 
             }

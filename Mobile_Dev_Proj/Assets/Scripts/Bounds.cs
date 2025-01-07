@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bounds : MonoBehaviour
 {
-    private ScoreManager scoreManager;
+    public ScoreManager scoreManager;
     private SceneSwitcher sceneSwitcher;
     private bool gameOver;
     // Start is called before the first frame update
