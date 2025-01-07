@@ -163,4 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   id: 0
-  midpoint: {x: 0, y: 0, z: 0}
+  mergepoint: {x: 0, y: 0, z: 0}

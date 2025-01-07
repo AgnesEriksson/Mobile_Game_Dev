@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,8 +28,9 @@ public class Drag : MonoBehaviour
             }
             else if (touch.phase == TouchPhase.Ended)
             {
+                transform.position = new Vector3(touchPosition.x, transform.position.y, transform.position.z);
+                StartCoroutine(nameof(Delay));
                 isDragging = false;
-
                 if (Spawn.currentBall != null)
                 {
                     Spawn.DropCurrent();
@@ -51,6 +53,11 @@ public class Drag : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1f);
     }
 }
 

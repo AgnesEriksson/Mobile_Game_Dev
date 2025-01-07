@@ -11,11 +11,8 @@ public class Ball : MonoBehaviour
     public Transform spawnPoint;
     private AccelerometerController acc;
     public string id = "0";
-
-
-    private Vector2 touchPos;
     public Vector3 mergepoint;
-    private float mergeTimer;
+    public bool moveAllowed;
 
 
     // Start is called before the first frame update
@@ -31,6 +28,7 @@ public class Ball : MonoBehaviour
             isDropped = true;
             if (rb != null)
             {
+                moveAllowed = true;
                 rb.gravityScale = 1f;
                 GetComponent<CircleCollider2D>().enabled = true;
             }
@@ -40,10 +38,10 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mergeTimer += Time.deltaTime;
         if (!isDropped && ballSpawner != null)
         {
             transform.position = new Vector3(ballSpawner.transform.position.x, ballSpawner.transform.position.y-1, 0);
+            moveAllowed = false;
         }
     }
 
@@ -55,6 +53,7 @@ public class Ball : MonoBehaviour
             rb.gravityScale = 1f;  
             isDropped = true;
             GetComponent<CircleCollider2D>().enabled = true;
+            moveAllowed = true;
         }
         /*ballSpawner.SpawnBall();*/
     }

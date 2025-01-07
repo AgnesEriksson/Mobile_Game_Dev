@@ -7,16 +7,31 @@ public class Bounds : MonoBehaviour
     public ScoreManager scoreManager;
     private SceneSwitcher sceneSwitcher;
     private bool gameOver;
+    public bool Trigger;
+    private Collider2D coll;
+    private SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
         gameOver = false;
+        Trigger = true;
+        coll = GetComponent <Collider2D>();
+        sprite = GetComponent <SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!Trigger)
+        {
+            coll.isTrigger = false;
+            sprite.enabled = true;
+        }
+        else
+        {
+            coll.isTrigger = true;
+            sprite.enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -28,7 +43,7 @@ public class Bounds : MonoBehaviour
             {
                 Debug.Log($"{other.name} passed through from below.");
                 scoreManager.CheckHighScore();
-                sceneSwitcher.LoadNextScene();
+                //sceneSwitcher.LoadNextScene();
                 
             }
         }
