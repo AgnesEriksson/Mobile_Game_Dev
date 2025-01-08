@@ -1,18 +1,24 @@
+using CandyCoded.HapticFeedback;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class VibrationManager : MonoBehaviour
+public class VibrationManager : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Light()
     {
-        
+        HapticFeedback.LightFeedback();
+        Debug.Log("Light");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Medium()
     {
-        
+        HapticFeedback.MediumFeedback();
+    }
+
+    public void Heavy()
+    {
+        HapticFeedback.HeavyFeedback();
     }
 }

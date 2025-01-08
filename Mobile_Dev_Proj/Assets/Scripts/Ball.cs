@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CandyCoded.HapticFeedback;
+using UnityEngine.Events;
 
 
 public class Ball : MonoBehaviour
@@ -9,10 +11,10 @@ public class Ball : MonoBehaviour
     private bool isDropped = false;
     private Spawner ballSpawner;
     public Transform spawnPoint;
-    private AccelerometerController acc;
     public string id = "0";
     public Vector3 mergepoint;
     public bool moveAllowed;
+    public UnityEvent vibrate;
 
 
     // Start is called before the first frame update
@@ -86,6 +88,7 @@ public class Ball : MonoBehaviour
             if (gameObject.tag == "5")
             {
                 Debug.Log("scramble time");
+                vibrate?.Invoke();
                 AccelerometerController.ActivateAccelerometer();
             }
             

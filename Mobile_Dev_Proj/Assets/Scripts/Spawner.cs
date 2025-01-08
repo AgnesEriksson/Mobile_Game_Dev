@@ -9,8 +9,6 @@ public class Spawner : MonoBehaviour
     public Transform Chicken;
     public Transform SpawnPoint;
     public GameObject currentBall;
-    private float minX = -4f;  // temp bounds will be replaced with proper screen space logic
-    private float maxX = 4f;
     private Vector3 matchPos = new Vector3();
     static public Vector3 newBallSpawnPos;
     static public bool newBall = false;
