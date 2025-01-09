@@ -15,10 +15,12 @@ public class VibrationManager : ScriptableObject
     public void Medium()
     {
         HapticFeedback.MediumFeedback();
+        Debug.Log("Medium");
     }
 
     public void Heavy()
     {
         HapticFeedback.HeavyFeedback();
+        Debug.Log("Heavy");
     }
 }

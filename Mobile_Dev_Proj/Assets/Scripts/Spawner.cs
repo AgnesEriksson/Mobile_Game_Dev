@@ -9,7 +9,6 @@ public class Spawner : MonoBehaviour
     public Transform Chicken;
     public Transform SpawnPoint;
     public GameObject currentBall;
-    private Vector3 matchPos = new Vector3();
     static public Vector3 newBallSpawnPos;
     static public bool newBall = false;
     static public int whatBall = 0;

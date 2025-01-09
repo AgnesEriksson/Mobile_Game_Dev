@@ -5,15 +5,12 @@ using UnityEngine;
 public class Bounds : MonoBehaviour
 {
     public ScoreManager scoreManager;
-    private SceneSwitcher sceneSwitcher;
-    private bool gameOver;
     public bool Trigger;
     private Collider2D coll;
     private SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
-        gameOver = false;
         Trigger = true;
         coll = GetComponent <Collider2D>();
         sprite = GetComponent <SpriteRenderer>();
@@ -42,9 +39,7 @@ public class Bounds : MonoBehaviour
             if (rb.velocity.y > 0)
             {
                 Debug.Log($"{other.name} passed through from below.");
-                scoreManager.CheckHighScore();
-                //sceneSwitcher.LoadNextScene();
-                
+                GameManager.Instance.GameOver();
             }
         }
     }
