@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91d3209f971ca3647900e4c2eb728729
+guid: 28b3d82665d982f4887a7d7aa9dec45e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,217 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: C_SS_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 423
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84521f3b3dab9a54484305d93947f29c
-      internalID: 478686188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_1
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 423
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc551f28d4ba8df4e84efe76f66ce752
-      internalID: -1702160515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_2
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 423
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d94c3d601bfe8cc42839c88d0a822a4a
-      internalID: 256055298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_3
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 423
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58936e27d9191e24da172eee751799b7
-      internalID: -1968447654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_4
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 423
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 73b535cd7054a8f4796e76c324fa79b9
-      internalID: -632203507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 282
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e169a04476117684a9fa0b52b94f72bc
-      internalID: 1513741840
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_6
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 282
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f744f127183d1984ea26962b29c2a918
-      internalID: 1314412678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 282
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78d5dff2a2a52634eb1fbc6b6fc17073
-      internalID: 802938321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_8
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 282
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92717996c28e1fe479bb08077a6b9e68
-      internalID: -1417715347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_9
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 282
-        width: 112
-        height: 141
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a06c33bb9cade04683b8dc2638e407b
-      internalID: -1783915637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: C_SS_10
+      name: pixil-frame-0 (9)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -347,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d12209e8c63c7e4cb292042acea3c6b
-      internalID: 1246978761
+      spriteID: 1ab46f8633ec57240a8bded4bd2eda3e
+      internalID: 45818549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_11
+      name: pixil-frame-0 (9)_1
       rect:
         serializedVersion: 2
         x: 112
@@ -368,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e494bde70c221644b340c67ad14e92f
-      internalID: 1256124177
+      spriteID: eb6ecf6b98f8f9746aafd88aa0d4798a
+      internalID: -1583437557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_12
+      name: pixil-frame-0 (9)_2
       rect:
         serializedVersion: 2
         x: 224
@@ -389,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b934c33ace9af448a5ca6902d58b34a
-      internalID: -170331250
+      spriteID: c1a7716a8611466488c28c19a7802ba3
+      internalID: -445148682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_13
+      name: pixil-frame-0 (9)_3
       rect:
         serializedVersion: 2
         x: 336
@@ -410,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1ec4f7fddd4c8a41bc6781b2d6f2e11
-      internalID: -145836796
+      spriteID: 27b0a263bbd3b9a4c87eee79784a2fcc
+      internalID: -1654108934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_14
+      name: pixil-frame-0 (9)_4
       rect:
         serializedVersion: 2
         x: 448
@@ -431,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30b6e9c24ff645d45b198970cc8e5cbe
-      internalID: -1222331178
+      spriteID: 0f6b299cfc48e9a4cafe7bfaa31097f7
+      internalID: -196032791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_15
+      name: pixil-frame-0 (9)_5
       rect:
         serializedVersion: 2
         x: 0
@@ -452,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c6c5ef867cc782469c9f7740c20665a
-      internalID: 5787126
+      spriteID: db5409cfaf2edc9419ebbc3978231264
+      internalID: -1603405799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_16
+      name: pixil-frame-0 (9)_6
       rect:
         serializedVersion: 2
         x: 112
@@ -473,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfa9533e20294b54796165e7118162ef
-      internalID: -1625435481
+      spriteID: d39c62ad3222ac84fbeeae97e8cd705e
+      internalID: -1706637209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_17
+      name: pixil-frame-0 (9)_7
       rect:
         serializedVersion: 2
         x: 224
@@ -494,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9627a66ec25207e4ca48f248b767646f
-      internalID: -1670669042
+      spriteID: dcd2e8d8d89f9544f9ac151447514481
+      internalID: -261497093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_18
+      name: pixil-frame-0 (9)_8
       rect:
         serializedVersion: 2
         x: 336
@@ -515,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e430f9a2983cc4ba2d8e52609e3935
-      internalID: 309058666
+      spriteID: c3ca284bcd4ec524bbc7bec21e317a61
+      internalID: -171938226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C_SS_19
+      name: pixil-frame-0 (9)_9
       rect:
         serializedVersion: 2
         x: 448
@@ -536,8 +326,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd038261743c5434db24843893367e1b
-      internalID: 1964598328
+      spriteID: 92f01736c9ccbe541a419f488f232fc1
+      internalID: -569958468
       vertices: []
       indices: 
       edges: []
@@ -553,26 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      C_SS_0: 478686188
-      C_SS_1: -1702160515
-      C_SS_10: 1246978761
-      C_SS_11: 1256124177
-      C_SS_12: -170331250
-      C_SS_13: -145836796
-      C_SS_14: -1222331178
-      C_SS_15: 5787126
-      C_SS_16: -1625435481
-      C_SS_17: -1670669042
-      C_SS_18: 309058666
-      C_SS_19: 1964598328
-      C_SS_2: 256055298
-      C_SS_3: -1968447654
-      C_SS_4: -632203507
-      C_SS_5: 1513741840
-      C_SS_6: 1314412678
-      C_SS_7: 802938321
-      C_SS_8: -1417715347
-      C_SS_9: -1783915637
+      pixil-frame-0 (9)_0: 45818549
+      pixil-frame-0 (9)_1: -1583437557
+      pixil-frame-0 (9)_2: -445148682
+      pixil-frame-0 (9)_3: -1654108934
+      pixil-frame-0 (9)_4: -196032791
+      pixil-frame-0 (9)_5: -1603405799
+      pixil-frame-0 (9)_6: -1706637209
+      pixil-frame-0 (9)_7: -261497093
+      pixil-frame-0 (9)_8: -171938226
+      pixil-frame-0 (9)_9: -569958468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

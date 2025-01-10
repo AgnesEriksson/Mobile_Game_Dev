@@ -24,7 +24,6 @@ public class Ball : MonoBehaviour
         rb.gravityScale = 0f;
         GetComponent<CircleCollider2D>().enabled = false;
         ballSpawner = FindObjectOfType<Spawner>();
-        //spawnPoint = GetComponent<GameObject>();
         if (transform.position.y < 1.2)
         {
             isDropped = true;
@@ -60,26 +59,16 @@ public class Ball : MonoBehaviour
         /*ballSpawner.SpawnBall();*/
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-/*        if (!hasCollided)
-        {
-            hasCollided = true;
-
-            Spawner ballSpawner = FindObjectOfType<Spawner>();
-            if (ballSpawner != null)
-            {
-                ballSpawner.SpawnBall();
-            }
-        }*/
- 
-        if(collision.gameObject.tag == gameObject.tag)
+        if (collision.gameObject.tag == gameObject.tag)
         {
             collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             mergepoint = gameObject.transform.position;
             Destroy(gameObject);
-            ScoreManager.score += int.Parse(gameObject.tag);
+            ScoreManager.score += int.Parse(gameObject.tag) + 1;
             Debug.Log(mergepoint);
             Spawner.newBallSpawnPos = mergepoint;
             Spawner.newBall = true;
@@ -90,7 +79,9 @@ public class Ball : MonoBehaviour
                 Debug.Log("scramble time");
                 vibrate?.Invoke();
                 AccelerometerController.ActivateAccelerometer();
+                AudioManager.Instance.PlayScramble();
             }
+            else { AudioManager.Instance.PlayPop(); }
             
         }
     }

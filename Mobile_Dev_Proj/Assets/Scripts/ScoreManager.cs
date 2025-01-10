@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
 
     public static int score = 0;
+    private static int highScore = 0;
 
     public static ScoreManager Instance { get; private set; }
 
@@ -20,35 +23,94 @@ public class ScoreManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDestroy()
     {
-        scoreText.text = score.ToString();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Update is called once per frame
+/*    void Start()
+    {
+        UpdateUI();
+    }*/
+
     void Update()
     {
-        scoreText.text = score.ToString();
+        if (scoreText != null)
+        {
+            scoreText.text = score.ToString();
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        scoreText = GameObject.Find("ScoreText")?.GetComponent<TextMeshProUGUI>();
+        highScoreText = GameObject.Find("HighScoreText")?.GetComponent<TextMeshProUGUI>();
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if (index == 1)
+        {
+            score = 0;
+            highScore = GetHighScore();
+        }
+        UpdateUI();
+    }
+
+    private void UpdateUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = score.ToString();
+        }
+
+        if (highScoreText != null)
+        {
+            highScoreText.text = highScore.ToString();
+        }
     }
 
     public void CheckHighScore()
     {
-        int highScore = PlayerPrefs.GetInt("HighScore", 0);
-
-        if (score > highScore)
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            highScore = PlayerPrefs.GetInt("HighScore");
+            if (score > highScore)
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+                PlayerPrefs.Save();
+            }
+        }
+        else
         {
             PlayerPrefs.SetInt("HighScore", score);
             PlayerPrefs.Save();
-            Debug.Log("New high score: " + score);
         }
     }
 
     public int GetHighScore()
     {
-        return PlayerPrefs.GetInt("HighScore", 0);
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            highScore = PlayerPrefs.GetInt("HighScore");
+        }
+        else
+        {
+            highScore = 0;
+        }
+
+        return highScore;
+    }
+
+    public int FinalScore()
+    {
+        return score;
+    }
+
+    public string DisplayScore()
+    {
+        string display = ("HS:" + highScore.ToString() + "  S:" + score.ToString());
+        return display;
     }
 }
+

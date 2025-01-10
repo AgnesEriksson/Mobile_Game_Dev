@@ -3,7 +3,7 @@ using UnityEngine;
 public class AccelerometerController : MonoBehaviour
 {
     public static bool useAccelerometer = false;
-    private float accelerometerDuration = 10f;
+    private float accelerometerDuration = 5f;
     private float timer = 0f;
     private float moveSpeedMultiplier = 0.5f;
     private float directionX;
@@ -14,6 +14,11 @@ public class AccelerometerController : MonoBehaviour
     {
         if (useAccelerometer)
         {
+            if (timer == 0f)
+            {
+                AudioManager.Instance.StopBG();
+                AudioManager.Instance.PlayRock();
+            }
             timer += Time.deltaTime;
             bound.Trigger = false;
 
@@ -25,6 +30,8 @@ public class AccelerometerController : MonoBehaviour
                 useAccelerometer = false;
                 bound.Trigger = true;
                 timer = 0f;
+                AudioManager.Instance.StopRock();
+                AudioManager.Instance.PlayBG();
             }
         }
     }
