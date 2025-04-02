@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     {
         AdsManager.Instance.banner.HideBanner();
         ScoreManager.Instance.CheckHighScore();
-        SceneSwitcher.Instance.LoadSceneByName("EndScene");
+        SceneSwitcher.Instance.LoadNextScene();
         AdsManager.Instance.interstital.ShowInterstital();
     }
 

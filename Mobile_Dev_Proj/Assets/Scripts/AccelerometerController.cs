@@ -51,10 +51,6 @@ public class AccelerometerController : MonoBehaviour
                         rb.velocity = new Vector2(rb.velocity.x + directionX, rb.velocity.y + directionY);
                     }
                 }
-/*                if (ball.moveAllowed)
-                {
-                    rb.velocity = new Vector2(rb.velocity.x + directionX, rb.velocity.y + directionY);
-                }*/
             }
         }
     }
